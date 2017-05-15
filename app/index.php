@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html> 
 <head><title>PHP-FPM</title>
 <meta http-equiv="refresh" content="10">
@@ -28,9 +31,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
 <?php
-session_start();
 echo "FQDN: ". $_SERVER['SERVER_NAME']."<br />";
 echo "Container: ". $_SERVER['SERVER_ADDR']."<br />";
 echo "PHP version: ". $_ENV['PHP_VERSION']."<br />";
