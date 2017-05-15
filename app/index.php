@@ -35,14 +35,10 @@ echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
 echo "Server Software: ". $_SERVER['SERVER_SOFTWARE']."<br /><br />";
 echo "PHP-FPM host: ". $_SERVER['HOSTNAME']."<br />";
 echo "PHP version: ". $_ENV['PHP_VERSION']."<br />";
-
 $count = isset($_SESSION['count']) ? $_SESSION['count'] : 1;
-
 echo "Your session count on Redis ". $count;
 $_SESSION['count'] = ++$count;
 ?>
-<br>
-<br>
 <center>
 <img src="nginx-phpfpm_architecture.jpg">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
