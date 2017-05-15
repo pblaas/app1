@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
 <!DOCTYPE html> 
 <head><title>PHP-FPM</title>
 <meta http-equiv="refresh" content="10">
@@ -32,11 +30,12 @@ session_start();
       </div>
     </nav>
 <?php
-echo "HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."<br />";
+echo "HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."<br /><br />";
+echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
+echo "Server Software: ". $_SERVER['SERVER_SOFTWARE']."<br /><br />";
 echo "PHP-FPM host: ". $_SERVER['HOSTNAME']."<br />";
 echo "PHP version: ". $_ENV['PHP_VERSION']."<br />";
-echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
-echo "Server Software: ". $_SERVER['SERVER_SOFTWARE']."<br />";
+
 $count = isset($_SESSION['count']) ? $_SESSION['count'] : 1;
 
 echo "Your session count on Redis ". $count;
