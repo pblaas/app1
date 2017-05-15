@@ -44,7 +44,7 @@
         ?>
       </div>
       <div class="col-md-6">
-        <img src="nginx-phpfpm_architecture.jpg" height="373" width="513">
+        <img src="nginx-phpfpm_architecture.jpg" height="453" width="755">
       </div>
     </div>
   </div>
