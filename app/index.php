@@ -29,22 +29,24 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-<div class="row">
-  <div class="col-md-4">
-    <?php
-    echo "HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."<br /><br />";
-    echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
-    echo "Server Software: ". $_SERVER['SERVER_SOFTWARE']."<br /><br />";
-    echo "PHP-FPM host: ". $_SERVER['HOSTNAME']."<br />";
-    echo "PHP version: ". $_ENV['PHP_VERSION']."<br />";
-    $count = isset($_SESSION['count']) ? $_SESSION['count'] : 1;
-    echo "Your session count on Redis ". $count;
-    $_SESSION['count'] = ++$count;
-    ?>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <?php
+        echo "HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."<br /><br />";
+        echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
+        echo "Server Software: ". $_SERVER['SERVER_SOFTWARE']."<br /><br />";
+        echo "PHP-FPM host: ". $_SERVER['HOSTNAME']."<br />";
+        echo "PHP version: ". $_ENV['PHP_VERSION']."<br />";
+        $count = isset($_SESSION['count']) ? $_SESSION['count'] : 1;
+        echo "Your session count on Redis ". $count;
+        $_SESSION['count'] = ++$count;
+        ?>
+      </div>
+      <div class="col-md-8">
+        <img src="nginx-phpfpm_architecture.jpg">
+      </div>
+    </div>
   </div>
-  <div class="col-md-8">
-    <img src="nginx-phpfpm_architecture.jpg">
-  </div>
-</div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </html>
