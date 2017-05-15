@@ -32,9 +32,10 @@ session_start();
       </div>
     </nav>
 <?php
-echo "FQDN: ". $_SERVER['SERVER_NAME']."<br />";
-echo "Container: ". $_SERVER['SERVER_ADDR']."<br />";
+echo "HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."<br />";
+echo "PHP-FPM host: ". $_SERVER['HOSTNAME']."<br />";
 echo "PHP version: ". $_ENV['PHP_VERSION']."<br />";
+echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
 echo "Server Software: ". $_SERVER['SERVER_SOFTWARE']."<br />";
 $count = isset($_SESSION['count']) ? $_SESSION['count'] : 1;
 
