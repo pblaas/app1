@@ -53,8 +53,8 @@ node{
     sh("./kubectl config set-context default --user=jenkins-build --namespace=`cat /var/run/secrets/kubernetes.io/serviceaccount/namespace`  --cluster=internal1")
     sh("./kubectl config use-context default")
 
-    sh("./kubectl -n app1 set image deployment nginx ${env.NGINXCONTAINER_IMAGE}=${env.DOCKERHUB_USER}/${env.NGINXCONTAINER_IMAGE}:${env.BUILD_TAG}")
-    sh("./kubectl -n app1 set image deployment phpfpm ${env.PHPFPMCONTAINER_IMAGE}=${env.DOCKERHUB_USER}/${env.PHPFPMCONTAINER_IMAGE}:${env.BUILD_TAG}")
+    sh("./kubectl -n app1 set image deployment nginx nginx=${env.DOCKERHUB_USER}/${env.NGINXCONTAINER_IMAGE}:${env.BUILD_TAG}")
+    sh("./kubectl -n app1 set image deployment phpfpm phpfpm=${env.DOCKERHUB_USER}/${env.PHPFPMCONTAINER_IMAGE}:${env.BUILD_TAG}")
   }
 }
 
