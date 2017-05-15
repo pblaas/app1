@@ -31,7 +31,7 @@
     </nav>
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <?php
         echo "HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."<br /><br />";
         echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
