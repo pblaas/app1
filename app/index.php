@@ -31,7 +31,7 @@
     </nav>
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <?php
         echo "HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."<br /><br />";
         echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
@@ -43,7 +43,7 @@
         $_SESSION['count'] = ++$count;
         ?>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
         <img src="nginx-phpfpm_architecture.jpg">
       </div>
     </div>
