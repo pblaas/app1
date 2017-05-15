@@ -5,7 +5,7 @@ podTemplate(label: 'mypod', containers: [
   node('mypod') {
       stage('Build and Push Frontend'){
           container('docker'){
-           git url: 'git://github.com/pblaas/${env.NGINXCONTAINER_IMAGE}.git'
+           git url: 'git://github.com/pblaas/nginxphpfpm.git'
            dir('app'){
              git url: 'git://github.com/pblaas/app1.git'
            }
