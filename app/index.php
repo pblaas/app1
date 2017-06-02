@@ -31,7 +31,7 @@
     </nav>
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 offset-sm-4">
         <?php
         echo "HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."<br /><br />";
         echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4 offset-sm-4">
         <img src="nginx-phpfpm_architecture.jpg" height="auto" width=100%>
       </div>
     </div>
