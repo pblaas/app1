@@ -43,8 +43,10 @@
         $_SESSION['count'] = ++$count;
         ?>
       </div>
+    </div>
+    <div class="row">
       <div class="col-md-6">
-        <img src="nginx-phpfpm_architecture.jpg" height="453" width="755">
+        <img src="nginx-phpfpm_architecture.jpg" height="auto" width=100%>
       </div>
     </div>
   </div>
