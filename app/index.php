@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <head><title>PHP-FPM</title>
-<meta http-equiv="refresh" content="10">
+<meta http-equiv="refresh" content="20">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!-- Latest compiled and minified CSS -->
@@ -46,7 +46,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <img src="containership_1.jpg" height="auto" width=100%>
+        <img src="containership_2.jpg" height="auto" width=100%>
       </div>
     </div>
   </div>
