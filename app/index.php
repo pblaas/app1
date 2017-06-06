@@ -46,7 +46,7 @@
     </div>
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <img src="containership_2.jpg" height="auto" width=100%>
+        <img src="containership_1.jpg" height="auto" width=100%>
       </div>
     </div>
   </div>
