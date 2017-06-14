@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<style>
+.container2 { width: 780px; background: #FFF url('containership_1.jpg') no-repeat center; margin: 0 auto; height:'your-img-size'; }
+</style>
 </head>
 <body>
 
@@ -29,7 +32,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="container">
+    <div class="container2">
     <div class="row">
       <div class="col-md-8">
         <?php
@@ -93,11 +96,6 @@
         echo '</div>';
 
         ?>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <img src="containership_1.jpg" height="auto" width=100%>
       </div>
     </div>
   </div>
