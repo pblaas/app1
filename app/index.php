@@ -33,7 +33,7 @@
     <div class="row">
       <div class="col-md-8">
         <?php
-        echo "HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."<br /><br />";
+        echo "<h2> HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."</h2><br /><br />";
         #echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
         #echo "Server Software: ". $_SERVER['SERVER_SOFTWARE']."<br /><br />";
         #echo "PHP-FPM host: ". $_SERVER['HOSTNAME']."<br />";
@@ -79,16 +79,16 @@
         foreach ($phparray as $key => $value) {
           echo '<div class="col-md-3">';
           if (preg_match('/php/', $key)) {
-            echo '<div class="alert alert-success" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
+            echo '<div class="alert alert-info" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
           }
           echo '</div>';
         }
         echo '</div>';
 
         echo '<div class="row">';
-        echo '<h3>Session counter</h3>';
+        echo '<h3>Redis Session counter</h3>';
         echo '<div class="col-md-3">';
-        echo '<div class="alert alert-warning" role="alert">Session # <span class="badge">' . $count.'</span></div>';
+        echo '<div class="alert alert-info" role="alert">Session # <span class="badge">' . $count.'</span></div>';
         echo '</div>';
         echo '</div>';
 
