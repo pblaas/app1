@@ -29,18 +29,69 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-  <div class="container">
+    <div class="container">
     <div class="row">
-      <div class="col-md-4 offset-md-4">
+      <div class="col-md-8">
         <?php
         echo "HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."<br /><br />";
-        echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
-        echo "Server Software: ". $_SERVER['SERVER_SOFTWARE']."<br /><br />";
-        echo "PHP-FPM host: ". $_SERVER['HOSTNAME']."<br />";
-        echo "PHP version: ". $_ENV['PHP_VERSION']."<br />";
+        #echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
+        #echo "Server Software: ". $_SERVER['SERVER_SOFTWARE']."<br /><br />";
+        #echo "PHP-FPM host: ". $_SERVER['HOSTNAME']."<br />";
+        #echo "PHP version: ". $_ENV['PHP_VERSION']."<br />";
         $count = isset($_SESSION['count']) ? $_SESSION['count'] : 1;
-        echo "Your session count on Redis ". $count;
+        $server_addr="web_".$_SERVER['SERVER_ADDR'];
+        $php_host="php_".$_SERVER['HOSTNAME'];
+        isset($_SESSION[$server_addr]) ? $_SESSION[$server_addr] : 1;
+        isset($_SESSION[$php_host]) ? $_SESSION[$php_host] : 1;
+        #echo "Your session count on Redis ". $count ."<br />";
         $_SESSION['count'] = ++$count;
+        $_SESSION[$server_addr] += 1;
+        $_SESSION[$php_host] += 1;
+        #echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
+        $webarray = array();
+        $phparray = array();
+
+        foreach ($_SESSION as $key => $value) {
+          if (preg_match('/web/', $key)) {
+            $webarray[$key] = $value;
+          }
+        }
+
+        foreach ($_SESSION as $key => $value) {
+          if (preg_match('/php/', $key)) {
+            $phparray[$key] = $value;
+          }
+        }
+
+        echo '<div class="row">';
+        echo '<h3>Webservers</h3>';
+        foreach ($webarray as $key => $value) {
+          echo '<div class="col-md-3">';
+          if (preg_match('/web/', $key)) {
+            echo '<div class="alert alert-info" role="alert">'. trim($key, "web_") . '  <span class="badge">' . $value.'</span></div>';
+          }
+          echo '</div>';
+        }
+        echo '</div>';
+
+        echo '<div class="row">';
+        echo '<h3>PHP Interpreters</h3>';
+        foreach ($phparray as $key => $value) {
+          echo '<div class="col-md-3">';
+          if (preg_match('/php/', $key)) {
+            echo '<div class="alert alert-success" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
+          }
+          echo '</div>';
+        }
+        echo '</div>';
+
+        echo '<div class="row">';
+        echo '<h3>Session counter</h3>';
+        echo '<div class="col-md-3">';
+        echo '<div class="alert alert-warning" role="alert">Session # <span class="badge">' . $count.'</span></div>';
+        echo '</div>';
+        echo '</div>';
+
         ?>
       </div>
     </div>
@@ -50,6 +101,7 @@
       </div>
     </div>
   </div>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </html>
