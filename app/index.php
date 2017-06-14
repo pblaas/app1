@@ -8,11 +8,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<style>
-.container2 { width: 780px; background: #FFF url('containership_1.jpg') no-repeat center; margin: 0 auto; height:'your-img-size'; }
-</style>
 </head>
-<body>
 
     <nav class="navbar navbar-inverse">
       <div class="container">
@@ -32,7 +28,8 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="container2">
+    <div style="background: white;">
+    <div class="container">
     <div class="row">
       <div class="col-md-8">
         <?php
@@ -98,7 +95,11 @@
         ?>
       </div>
     </div>
+    <div class="row">
+      <img src="containership_1.jpg">
+    </div>
   </div>
+</div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
