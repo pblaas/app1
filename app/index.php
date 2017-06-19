@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
 </head>
 
     <nav class="navbar navbar-inverse">
@@ -28,7 +29,6 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div style="background: white;">
     <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -93,13 +93,27 @@
         echo '</div>';
 
         ?>
+        <p>Page will refresh in <span id="counter">10</span> second(s).</p>
+        <script type="text/javascript">
+        function countdown() {
+            var i = document.getElementById('counter');
+            if (parseInt(i.innerHTML)<=0) {
+                location.href = '/';
+            }
+            i.innerHTML = parseInt(i.innerHTML)-1;
+        }
+        setInterval(function(){ countdown(); },1000);
+        </script>
+        <a href="phpfpm-architecture.jpg" target="_blank">PHP FPM architecture</a><br>
+        <a href="app1-multi-tier-app-flow.jpg" target="_blank">Multi tier container overview</a>
       </div>
+
     </div>
-    <div class="row">
-      <img src="containership_2.jpg">
-    </div>
+
   </div>
-</div>
+
+
+
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 

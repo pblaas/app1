@@ -1,0 +1,12 @@
+.bodytext {
+  margin: 2em;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background-color: rgba(135, 206, 250, 0.6);
+  background-size: cover;
+}
