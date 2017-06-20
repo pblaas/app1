@@ -90,7 +90,11 @@
         echo '<div class="col-md-3">';
         echo '<div class="alert alert-success" role="alert">Session # <span class="badge">' . $count.'</span></div>';
         echo '</div>';
-        echo '</div>';
+	echo '</div>';
+
+	if (isset($_GET["destroy"])){ 
+		session_destroy();
+	}
 
         ?>
         <p>Page will refresh in <span id="counter">10</span> second(s).</p>
