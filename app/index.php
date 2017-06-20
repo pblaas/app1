@@ -44,7 +44,7 @@
         isset($_SESSION[$server_addr]) ? $_SESSION[$server_addr] : 1;
         isset($_SESSION[$php_host]) ? $_SESSION[$php_host] : 1;
         #echo "Your session count on Redis ". $count ."<br />";
-        $_SESSION['count'] = $count++;
+        $_SESSION['count'] = ++$count;
         $_SESSION[$server_addr] += 1;
         $_SESSION[$php_host] += 1;
         #echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
