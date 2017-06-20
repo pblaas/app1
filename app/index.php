@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if (isset($_GET["destroy"])){ 
+	session_destroy();
+	session_unset();
+	session_start();
+}
+?>
 <!DOCTYPE html>
 <head><title>PHP-FPM</title>
 <meta http-equiv="refresh" content="20">
@@ -92,9 +98,6 @@
         echo '</div>';
 	echo '</div>';
 
-	if (isset($_GET["destroy"])){ 
-		session_destroy();
-	}
 
         ?>
         <p>Page will refresh in <span id="counter">10</span> second(s).</p>
