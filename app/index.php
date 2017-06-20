@@ -115,7 +115,8 @@ if (isset($_GET["destroy"])){
         setInterval(function(){ countdown(); },1000);
         </script>
         <a href="phpfpm-architecture.jpg" target="_blank">PHP FPM architecture</a><br>
-        <a href="app1-multi-tier-app-flow.jpg" target="_blank">Multi tier container overview</a>
+	<a href="app1-multi-tier-app-flow.jpg" target="_blank">Multi tier container overview</a>
+        <a href="/?destroy=1" target="_self">Reset Session</a>
       </div>
 
     </div>
