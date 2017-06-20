@@ -3,6 +3,7 @@ if (isset($_GET["destroy"])){
 	session_destroy();
 	session_unset();
 	session_start();
+	header('Location: ' . /, true, false ? 301 : 302);
 }
 ?>
 <!DOCTYPE html>
