@@ -1,5 +1,5 @@
-<?php session_start(); 
-if (isset($_GET["destroy"])){ 
+<?php session_start();
+if (isset($_GET["destroy"])){
 	session_destroy();
 	session_unset();
 	session_start();
@@ -19,7 +19,7 @@ if (isset($_GET["destroy"])){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <link rel="stylesheet" href="css/style.css">
 </head>
-
+<body>
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
@@ -29,20 +29,22 @@ if (isset($_GET["destroy"])){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">PHP-FPM Microservices - CI/CD Demo</a>
+          <a class="navbar-brand" href="/">PHP-FPM - CI/CD Demo</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="/">Home</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="container">
-    <div class="row">
-      <div class="col-md-8">
+		<div class="generic">
+      <div class="forward">
         <?php
-        echo "<h2> HTTP_X_FORWARDED_HOST: ". $_SERVER['HTTP_X_FORWARDED_HOST']."</h2><br /><br />";
+        echo "<h3> HTTP_X_FORWARDED_HOST:<strong> ". $_SERVER['HTTP_X_FORWARDED_HOST']."</strong></h3><br /><br />";
+				?>
+				</div>
+				<?php
         #echo "Webserver: ". $_SERVER['SERVER_ADDR']."<br />";
         #echo "Server Software: ". $_SERVER['SERVER_SOFTWARE']."<br /><br />";
         #echo "PHP-FPM host: ". $_SERVER['HOSTNAME']."<br />";
@@ -71,38 +73,47 @@ if (isset($_GET["destroy"])){
             $phparray[$key] = $value;
           }
         }
-
-        echo '<div class="row">';
-        echo '<h3>Webservers</h3>';
+				?>
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="webservers">
+        <h3>Webservers</h3>
+				<?php
         foreach ($webarray as $key => $value) {
-          echo '<div class="col-md-3">';
           if (preg_match('/web/', $key)) {
             echo '<div class="alert alert-success" role="alert">'. trim($key, "web_") . '  <span class="badge">' . $value.'</span></div>';
           }
-          echo '</div>';
-        }
-        echo '</div>';
 
-        echo '<div class="row">';
-        echo '<h3>PHP Interpreters</h3>';
+        }
+				?>
+        </div>
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="phpint">
+        <h3>PHP Interpreters</h3>
+				<?php
         foreach ($phparray as $key => $value) {
-          echo '<div class="col-md-3">';
           if (preg_match('/php/', $key)) {
             echo '<div class="alert alert-success" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
           }
-          echo '</div>';
+
         }
-        echo '</div>';
-
-        echo '<div class="row">';
-        echo '<h3>Redis Session counter</h3>';
-        echo '<div class="col-md-3">';
+				?>
+        </div>
+			</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="redis">
+        <h3>Redis Session counter</h3>
+				<?php
         echo '<div class="alert alert-success" role="alert">Session # <span class="badge">' . $count.'</span></div>';
-        echo '</div>';
-	echo '</div>';
+				?>
+			</div>
+		</div>
+	</div>
 
-
-        ?>
+	<div class="row">
+    		<div class="col-md-6 col-md-offset-3">
+				<div class="footerlinks">
         <p>Page will refresh in <span id="counter">10</span> second(s).</p>
         <script type="text/javascript">
         function countdown() {
@@ -117,11 +128,11 @@ if (isset($_GET["destroy"])){
         <a href="phpfpm-architecture.jpg" target="_blank">PHP FPM architecture</a><br>
 	<a href="app1-multi-tier-app-flow.jpg" target="_blank">Multi tier container overview</a><br>
         <a href="/?destroy=1" target="_self">Reset Session</a>
-      </div>
+			</div>
+			</div>
+		</div>
 
-    </div>
-
-  </div>
+</body>
 
 
 
