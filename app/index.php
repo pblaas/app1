@@ -39,9 +39,9 @@ if (isset($_GET["destroy"])){
       </div>
     </nav>
 		<div class="generic">
-      <div class="forward">
+      <div class="xforward">
         <?php
-        echo "<h3> HTTP_X_FORWARDED_HOST:<strong> ". $_SERVER['HTTP_X_FORWARDED_HOST']."</strong></h3><br /><br />";
+        echo "HTTP_X_FORWARDED_HOST:<strong> ". $_SERVER['HTTP_X_FORWARDED_HOST']."</strong><br /><br />";
 				?>
 				</div>
 				<?php
@@ -75,7 +75,7 @@ if (isset($_GET["destroy"])){
         }
 				?>
 				<div class="row">
-					<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="col-md-4 col-sm-12 col-xs-12">
         <div class="webservers">
         <h3>Webservers</h3>
 				<?php
@@ -88,7 +88,7 @@ if (isset($_GET["destroy"])){
 				?>
         </div>
 			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
+			<div class="col-md-4 col-sm-12 col-xs-12">
         <div class="phpint">
         <h3>PHP Interpreters</h3>
 				<?php
@@ -101,7 +101,7 @@ if (isset($_GET["destroy"])){
 				?>
         </div>
 			</div>
-				<div class="col-md-3 col-sm-6 col-xs-12">
+				<div class="col-md-4 col-sm-12 col-xs-12">
         <div class="redis">
         <h3>Redis Session counter</h3>
 				<?php
@@ -112,7 +112,7 @@ if (isset($_GET["destroy"])){
 	</div>
 
 	<div class="row">
-    		<div class="col-md-6 col-md-offset-3">
+    		<div class="col-md-4 col-md-offset-4">
 				<div class="footerlinks">
         <p>Page will refresh in <span id="counter">10</span> second(s).</p>
         <script type="text/javascript">
