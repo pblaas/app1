@@ -8,6 +8,7 @@ if (isset($_GET["destroy"])){
 	exit();
 }
 ?>
+
 <!DOCTYPE html>
 <head><title>PHP-FPM</title>
 <meta http-equiv="refresh" content="20">
