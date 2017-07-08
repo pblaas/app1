@@ -107,7 +107,7 @@ if (isset($_GET["destroy"])){
         <div class="redis">
         <h3>Redis Session counter</h3>
 				<?php
-        echo '<div class="alert alert-success" role="alert">Session # <span class="badge">' . $count.'</span></div>';
+        echo '<div class="alert alert-success" role="alert">Session # <span class="badge">' . $count-1.'</span></div>';
 				?>
 			</div>
 		</div>
