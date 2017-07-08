@@ -56,7 +56,7 @@ if (isset($_GET["destroy"])){
         isset($_SESSION[$server_addr]) ? $_SESSION[$server_addr] : 1;
         isset($_SESSION[$php_host]) ? $_SESSION[$php_host] : 1;
         #echo "Your session count on Redis ". $count ."<br />";
-        $_SESSION['count'] = ++$count;
+        $_SESSION['count'] = ++$count -1;
         $_SESSION[$server_addr] += 1;
         $_SESSION[$php_host] += 1;
         #echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
@@ -76,7 +76,7 @@ if (isset($_GET["destroy"])){
         }
 				?>
 				<div class="row">
-					<div class="col-md-4 col-sm-12 col-xs-12">
+					<div class="col-md-4 col-sm-6 col-xs-12">
         <div class="webservers">
         <h3>Webservers</h3>
 				<?php
@@ -89,7 +89,7 @@ if (isset($_GET["destroy"])){
 				?>
         </div>
 			</div>
-			<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="col-md-4 col-sm-6 col-xs-12">
         <div class="phpint">
         <h3>PHP Interpreters</h3>
 				<?php
@@ -103,11 +103,11 @@ if (isset($_GET["destroy"])){
 				?>
         </div>
 			</div>
-				<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="col-md-4 col-sm-6 col-xs-12">
         <div class="redis">
         <h3>Redis Session counter</h3>
 				<?php
-        echo '<div class="alert alert-success" role="alert">Session # <span class="badge">' . $count-1.'</span></div>';
+        echo '<div class="alert alert-success" role="alert">Session # <span class="badge">' . $count.'</span></div>';
 				?>
 			</div>
 		</div>
