@@ -5,7 +5,7 @@ podTemplate(label: 'mypod', containers: [
   node('mypod') {
       stage('Build and Push Webserver'){
           container('docker'){
-           git url: 'git://github.com/pblaas/nginxphpfpm.git'
+           git url: 'git://github.com/pblaas/docker_nginxphpfpm.git'
            dir('src'){
              git url: 'git://github.com/pblaas/app1.git'
            }
@@ -27,7 +27,7 @@ podTemplate(label: 'mypod', containers: [
            dir('src'){
              git url: 'git://github.com/pblaas/app1.git'
            }
-           git url: 'https://github.com/pblaas/phpfpm.git'
+           git url: 'https://github.com/pblaas/docker_phpfpm.git'
             stage ('Build Docker image'){
               def imageName = "${env.DOCKERHUB_USER}/${env.PHPFPMCONTAINER_IMAGE}:${env.BUILD_TAG}"
               sh "docker build -t ${imageName}  ."
