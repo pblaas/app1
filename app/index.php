@@ -56,7 +56,7 @@ if (isset($_GET["destroy"])){
         isset($_SESSION[$server_addr]) ? $_SESSION[$server_addr] : 1;
         isset($_SESSION[$php_host]) ? $_SESSION[$php_host] : 1;
         #echo "Your session count on Redis ". $count ."<br />";
-        $_SESSION['count'] = ++$count -1;
+        $_SESSION['count'] = $count++;
         $_SESSION[$server_addr] += 1;
         $_SESSION[$php_host] += 1;
         #echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
@@ -95,8 +95,8 @@ if (isset($_GET["destroy"])){
 				<?php
         foreach ($phparray as $key => $value) {
           if (preg_match('/php/', $key)) {
-            echo '<div class="alert alert-danger" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
-            #echo '<div class="alert alert-success" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
+            #echo '<div class="alert alert-danger" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
+            echo '<div class="alert alert-success" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
           }
 
         }
