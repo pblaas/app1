@@ -95,8 +95,8 @@ if (isset($_GET["destroy"])){
 				<?php
         foreach ($phparray as $key => $value) {
           if (preg_match('/php/', $key)) {
-            #echo '<div class="alert alert-danger" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
-            echo '<div class="alert alert-success" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
+            echo '<div class="alert alert-danger" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
+            #echo '<div class="alert alert-success" role="alert">'. trim($key, "php_") . '  <span class="badge">' . $value.'</span></div>';
           }
 
         }
